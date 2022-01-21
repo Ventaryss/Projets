@@ -40,6 +40,8 @@ Solutions autres :
 #include <stdlib.h>
 #include <dirent.h>
 
+typedef char chaine[61];
+
 int main()
 {
     struct dirent *dir;
@@ -56,18 +58,18 @@ int main()
     return 0;
 }
 
-void verif(char fichier_a_verifier[], char Ancien_poid[], char Poid_fichier[])
+void verif(char fichier_a_verifier[], char Ancien_poid[], char Poid_fichier[], chaine nomfic)
 {
     fichier_a_verifier = "Emplacement de ton fichier";
-    Ancien_poid = FileGetSize(/*nomfic*/);
+    Ancien_poid = FileGetSize(nomfic);
 
     while (strcmp(Poid_fichier,Ancien_poid)!=0)
-        Poid_fichier = FileGetSize(/*nomfic*/);
+        Poid_fichier = FileGetSize(nomfic);
 
         if (strcmp(Poid_fichier,Ancien_poid)!=0)
         {
             MsgBox(64, "", "Fichier modifier");
-            Ancien_poid = FileGetSize(/*nomfic*/);
+            Ancien_poid = FileGetSize(nomfic);
         }
     }
 }
