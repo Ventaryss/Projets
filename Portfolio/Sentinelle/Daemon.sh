@@ -1,6 +1,6 @@
 #!/usr/local/bin/bash
 
-Daemon de sécurité :
+"Daemon de sécurité :
 
 - vérifie l'ensemble des fichiers en continue
 - si il y a eu une modification :
@@ -34,8 +34,11 @@ Solution de facilitée :
 Solutions autres : 
 
 - tenter de le faire pour windows et Linux (Linux plus simple)
-- voir pour faire en sorte de déterminer ou non si la modification a été illégale ou non 
-*/
+- voir pour faire en sorte de déterminer ou non si la modification a été illégale ou non "
+
+'
+
+test en C :
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -102,4 +105,22 @@ FileSetAttrib("Fichier.txt", "-A")
 If Not StringInStr(FileGetAttrib("Fichier.txt"), "A") Then
 ; Le fichier à été modifié
 EndIf
-*/
+
+'
+
+"test en bash :"
+
+$var="\C:\Users\aubin\OneDrive\Documents\GitHub\Projets\Portfolio\Sentinelle\test.odt"
+
+while true
+do
+
+    if test $var
+    then 
+    echo "Le fichier a été modifié"
+    else
+    echo "Le fichier n'a pas été modifié"
+    fi
+
+    sleep 20m;
+done
