@@ -1,6 +1,10 @@
 #/mnt/c/Windows/System32
 
-$var "./test"
+$var "./test.odt"
+
+FILESIZE=$(stat -c%s "$var")
+
+echo "le fichier pèse $FILESIZE"
 
 while true
 do
