@@ -3,10 +3,11 @@
 var="/mnt/c/Users/aubin/OneDrive/Documents/GitHub/Projets/Portfolio/Sentinelle/test"
 number_of_words1=`wc --word < $var`
 
+w1=$number_of_words1
+
 # méthode simple de comptage de mots
 
-# mettre en uniq les pharses en trop
-# faire en sorte que dès qu'il y a une modification ne pas écrire encore et encore, mais relancer un autre while
+# mots avec s ou non
 
 echo "Le nombre de mots est : $number_of_words1"
 
@@ -14,7 +15,6 @@ while true
 do
     number_of_words2=`wc --word < $var`
 
-    w1=$number_of_words1
     w2=$number_of_words2
 
     if test "$w1" -eq "$w2"
@@ -33,4 +33,6 @@ do
     fi
 
     sleep 2;
+
+    w1=$number_of_words2
 done
