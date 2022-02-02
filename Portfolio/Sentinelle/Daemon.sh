@@ -27,7 +27,9 @@ do
 
     if test "$w1" -eq "$w2" && test "$c1" -eq "$c2"
     then 
+    clear
     echo "Le fichier n'a pas été modifié"
+    sleep 0.2
     else
         heure=$(date +%H:%M:%S)
         if test "$w1" -gt "$w2" || test "$c1" -gt "$c2"
@@ -65,7 +67,7 @@ do
         fi
     fi
 
-    sleep 2;
+    sleep 1;
 
     w1=$number_of_words2
     c1=$number_of_cara2
